@@ -997,34 +997,11 @@ export interface paths {
       }
     }
   }
-  '/rpc/json_arr_to_text_arr': {
+  '/rpc/pgrst_watch': {
     post: {
       parameters: {
         body: {
-          args: {
-            /** Format: json */
-            _json: string
-          }
-        }
-        header: {
-          /** Preference */
-          Prefer?: parameters['preferParams']
-        }
-      }
-      responses: {
-        /** OK */
-        200: unknown
-      }
-    }
-  }
-  '/rpc/create_upload': {
-    post: {
-      parameters: {
-        body: {
-          args: {
-            /** Format: json */
-            data: string
-          }
+          args: { [key: string]: unknown }
         }
         header: {
           /** Preference */
@@ -1057,11 +1034,34 @@ export interface paths {
       }
     }
   }
-  '/rpc/pgrst_watch': {
+  '/rpc/json_arr_to_text_arr': {
     post: {
       parameters: {
         body: {
-          args: { [key: string]: unknown }
+          args: {
+            /** Format: json */
+            _json: string
+          }
+        }
+        header: {
+          /** Preference */
+          Prefer?: parameters['preferParams']
+        }
+      }
+      responses: {
+        /** OK */
+        200: unknown
+      }
+    }
+  }
+  '/rpc/create_upload': {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: json */
+            data: string
+          }
         }
         header: {
           /** Preference */
